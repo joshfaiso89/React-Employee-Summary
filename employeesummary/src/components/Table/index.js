@@ -15,10 +15,10 @@ function Table(props) {
             <tbody>
 
                 {
-                    props.allEmployees.map(employee => {
+                    props.allEmployees.slice(0, 20).map(employee => {
                         return (
                             <tr>
-                                <td><img src={employee.picture} /></td>
+                                <td><img src={employee.picture.medium} /></td>
                                 <td>{employee.firstName}</td>
                                 <td>{employee.lastName}</td>
                                 <td>{employee.email}</td>

@@ -1,16 +1,25 @@
 import React , { Component }from "react";
-import allEmployees from "../../db/db.json";
 import Table from "../Table";
+// import allEmployees from "../../db/db.json";
+import Api from "../../db/Api";
+
+// console.log(Api);
 
 class Search extends Component {
     state = {
-        allEmployees, 
+        allEmployees: [],
         search: ""
+    }
+    componentDidMount() {
+        Api.getRandomUser().then((res) => {
+            this.setState({ allEmployees: res.data.results });
+             console.log(res.data.results);
+        })
     }
 
     handleSearch = (event) => {
-        
-    }
+        console.log(event);
+    };
 
 
     render(){
