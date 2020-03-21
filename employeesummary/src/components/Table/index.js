@@ -1,13 +1,17 @@
 import React from "react";
 import InputField from "../../components/Inputfeild";
+import "./style.css";
 
 function Table(props) {
     return (
 
-        <div>
+        <div className="container">
+            <div className="text-center">
             <InputField  handleInputChange={props.handleInputChange}  searchValue={props.search} />
+            </div>
+            <br></br>
             <table className="table table-hover">
-                <thead>
+                <thead className="thead-dark"> 
                     <tr>
                         <th scope="col">Picture</th>
                         <th scope="col">First Name</th>
